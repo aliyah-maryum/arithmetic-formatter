@@ -9,14 +9,14 @@ def arithmetic_arranger(problems, showResult=False):
         return "Error: Too many problems."
     for problem in problems:
             if '*' in problem or '/' in problem:
-                return "Error: Operator must be either '+' or '-'."
+                return "Error: Operator must be '+' or '-'."
             if '-' in problem or '+' in problem:
                 if '-' in problem:
                     operands = problem.split('-')
                     operand1 = operands[0].strip()
                     operand2 = operands[1].strip()
                     if len(operand1) > 4 or len(operand2) > 4:
-                        return "Error: Numbers cannot be more than 4 digits."
+                        return "Error: Numbers cannot be more than four digits."
                     elif operand1.isdecimal() == False or operand2.isdecimal() == False:
                         return "Error: Numbers must only contain digits."
                     else:
@@ -48,7 +48,7 @@ def arithmetic_arranger(problems, showResult=False):
                     operand2 = operands[1]
                     operand2 = operand2.strip()
                     if len(operand1) > 4 or len(operand2) > 4:
-                        return "Error: Numbers cannot be more than 4 digits."
+                        return "Error: Numbers cannot be more than four digits."
                     if operand1.isdecimal() == False or operand2.isdecimal() == False:
                         return "Error: Numbers must only contain digits."
                     else:
@@ -73,6 +73,6 @@ def arithmetic_arranger(problems, showResult=False):
                                 answer2 = str(answer)
                                 row4 = row4 + answer2.rjust(len(operand2) + 2) + '    '
     if showResult == False:
-        return row1 + "\n" + row2 + "\n" + row3
+        return row1.rstrip() + "\n" + row2.rstrip() + "\n" + row3.rstrip()
     else:
-        return row1 + "\n" + row2 + "\n" + row3  + "\n" + row4
+        return row1.rstrip() + "\n" + row2.rstrip() + "\n" + row3.rstrip()  + "\n" + row4.rstrip()
